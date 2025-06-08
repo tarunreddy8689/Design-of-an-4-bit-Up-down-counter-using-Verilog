@@ -1,0 +1,226 @@
+{
+  "creator": "Yosys 0.47+149 (git sha1 384c19119, clang++ 18.1.8 -fPIC -O3)",
+  "modules": {
+    "updown_counter": {
+      "attributes": {
+        "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:3.1-21.10",
+        "top": "00000000000000000000000000000001",
+        "dynports": "00000000000000000000000000000001",
+        "hdlname": "updown_counter"
+      },
+      "parameter_default_values": {
+        "WIDTH": "00000000000000000000000000000100"
+      },
+      "ports": {
+        "i_clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "i_rst": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "i_up_down": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "o_count": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8 ]
+        }
+      },
+      "cells": {
+        "$auto$alumacc.cc:485:replace_alu$1426": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:16.20-16.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 5, 6, 7, 8 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 9, 10, 11, 12 ],
+            "X": [ 13, 14, 15, 16 ],
+            "Y": [ 17, 18, 19, 20 ]
+          }
+        },
+        "$auto$alumacc.cc:485:replace_alu$1429": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:18.20-18.31"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 5, 6, 7, 8 ],
+            "B": [ "1" ],
+            "BI": [ "1" ],
+            "CI": [ "1" ],
+            "CO": [ 21, 22, 23, 24 ],
+            "X": [ 25, 26, 27, 28 ],
+            "Y": [ 29, 30, 31, 32 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$1423": {
+          "hide_name": 1,
+          "type": "$sdff",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "SRST_POLARITY": "00000000000000000000000000000001",
+            "SRST_VALUE": "0000",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:12.1-19.4"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output",
+            "SRST": "input"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 33, 34, 35, 36 ],
+            "Q": [ 5, 6, 7, 8 ],
+            "SRST": [ 3 ]
+          }
+        },
+        "$procmux$1417": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:15.14-15.23|/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:15.10-18.32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 29, 30, 31, 32 ],
+            "B": [ 17, 18, 19, 20 ],
+            "S": [ 4 ],
+            "Y": [ 33, 34, 35, 36 ]
+          }
+        }
+      },
+      "netnames": {
+        "$add$/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:16$708_Y": {
+          "hide_name": 1,
+          "bits": [ 17, 18, 19, 20 ],
+          "attributes": {
+          }
+        },
+        "$auto$alumacc.cc:501:replace_alu$1427": {
+          "hide_name": 1,
+          "bits": [ 13, 14, 15, 16 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:501:replace_alu$1430": {
+          "hide_name": 1,
+          "bits": [ 25, 26, 27, 28 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:502:replace_alu$1428": {
+          "hide_name": 1,
+          "bits": [ 9, 10, 11, 12 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:502:replace_alu$1431": {
+          "hide_name": 1,
+          "bits": [ 21, 22, 23, 24 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$wreduce.cc:461:run$1425": {
+          "hide_name": 1,
+          "bits": [ 29, 30, 31, 32, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64 ],
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:18.20-18.31",
+            "unused_bits": "4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
+          }
+        },
+        "$procmux$1417_Y": {
+          "hide_name": 1,
+          "bits": [ 33, 34, 35, 36 ],
+          "attributes": {
+          }
+        },
+        "i_clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:6.32-6.37"
+          }
+        },
+        "i_rst": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:7.32-7.37"
+          }
+        },
+        "i_up_down": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:8.32-8.41"
+          }
+        },
+        "o_count": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8 ],
+          "attributes": {
+            "src": "/home/vlsi/OpenROAD-flow-scripts/flow/designs/src/updown_counter/updown_counter.v:9.32-9.39"
+          }
+        }
+      }
+    }
+  }
+}

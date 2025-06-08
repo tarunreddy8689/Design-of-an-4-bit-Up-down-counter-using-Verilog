@@ -1,0 +1,23 @@
+cd
+cd OpenROAD-flow-scripts/
+source env.sh
+cd flow
+mkdir designs/src/updown_counter
+mkdir designs/nangate45/updown_counter
+cp designs/nangate45/gcd/* designs/nangate45/updown_counter
+cp /mnt/c/Users/kharnain/Downloads/updown_counter.v designs/src/updown_counter/
+gedit designs/nangate45/updown_counter/config.mk
+gedit designs/nangate45/updown_counter/constraint.sdc
+make DESIGN_CONFIG=./designs/nangate45/updown_counter/config.mk clean_all
+make DESIGN_CONFIG=./designs/nangate45/updown_counter/config.mk
+make DESIGN_CONFIG=./designs/nangate45/updown_counter/config.mk gui_final
+
+#inside openroad script i had run
+
+report_checks -unconstrained
+report_design_area
+report_power
+report_check_types
+
+
+Thank you
